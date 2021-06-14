@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #timer {
+            display: none;
+        }
+        
+        #form-date {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        
+        .tab-links {
+            padding: 10px;
+        }
+        
+        .timing {
+            width: 200px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js"></script>
+    <script src="./src/index.js" type="module"></script>
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tab-links" id="calc-tab" type="button">Калькулятор дат</button>
+        <button class="tab-links" id="timer-tab" type="button">Таймер</button>
+    </div>
+
+    <div class="tab-content" id="calc">
+        <h1>Калькулятор дат:</h1>
+        <form id="form-date">
+            <label for="date1">
+            <b>Первая дата: </b>
+            <input type="date" name="date1" id="date1">
+        </label>
+            <label for="date2">
+            <b>Вторая дата: </b>
+            <input type="date" name="date2" id="date2">
+        </label>
+            <button type="submit">Рассчитать промежуток</button>
+        </form>
+
+        <p class="message"></p>
+    </div>
+
+    <div class="tab-content" id="timer">
+        <h1>Таймер:</h1>
+        <h2>Введите нужное количество времени в минутах:</h2>
+        <div class="timing">
+            <form>
+                <div>
+                    <label for="mins">Минуты</label>
+                    <input type="number" name="mins" id="mins" value="0" min="0">
+                </div>
+                <div>
+                    <button type="submit" id="start">Старт</button>
+                    <button type="button" id="stop">Стоп</button>
+                </div>
+            </form>
+            <h3 class="time">Осталось: 0:0:0</h3>
+        </div>
+
+    </div>
+</body>
+
+</html>
